@@ -8,8 +8,32 @@
 
 require 'vendor/autoload.php';
 
-$app = new \Slim\Slim();
+function startsWith($haystack, $needle)
+{
+    $length = strlen($needle);
+    return (substr($haystack, 0, $length) === $needle);
+}
+
+function endsWith($haystack, $needle)
+{
+    $length = strlen($needle);
+    if ($length == 0) {
+        return true;
+    }
+
+    return (substr($haystack, -$length) === $needle);
+}
+
+$app = new \Slim\Slim([
+    "debug" => false
+]);
 $app->contentType("application/json");
+$app->error(function (Exception $e) use($app) {
+    $output = array(
+        "error" => "invalid operation"
+    );
+    echo json_encode($output);
+});
 
 
 $app->get('/pages/', function() {
@@ -40,9 +64,15 @@ $app->get('/content/:lang/:page_id', function($lang, $page_id) {
     $path = $config["pages"][$page_id]["content"][$lang];
     $Parsedown = new Parsedown();
     $output = array();
-    $output["content"] = $Parsedown->text(file_get_contents($path));
     $output["format"] = array();
-    $output["format"]["source"] = "md";
+    if(endsWith($path, '.md')) {
+        $output["content"] = $Parsedown->text(file_get_contents($path));
+        $output["format"]["source"] = "md";
+    } else {
+        $output["content"] = file_get_contents($path);
+        $output["format"]["source"] = "html";
+    }
+
     $output["format"]["output"] = "html";
     echo json_encode($output);
 });

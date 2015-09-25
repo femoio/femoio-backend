@@ -13,12 +13,32 @@
     },
     "about":{
       "title":{
-        "de":"FeMo IO Über",
-        "en":"FeMo IO About"
+        "de":"Über Uns",
+        "en":"About us"
       },
       "content":{
         "de":"data/de/about.md",
         "en":"data/en/about.md"
+      }
+    },
+    "projects":{
+      "title":{
+        "de":"Projekte",
+        "en":"Projects"
+      },
+      "content":{
+        "de":"data/de/projects.md",
+        "en":"data/en/projects.md"
+      }
+    },
+    "contact":{
+      "title":{
+        "de":"Kontakt",
+        "en":"Contact"
+      },
+      "content":{
+        "de":"data/de/contact.html",
+        "en":"data/en/contact.html"
       }
     }
   }
