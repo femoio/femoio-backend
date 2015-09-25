@@ -51,3 +51,8 @@ Responds with a JSON Object containing the content and format information
         }
     }
 
+##Installation
+
+Installation of this tool requires the command line tool *composer*. Install the tools dependencies as follows.
+
+    composer install
