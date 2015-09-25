@@ -1,0 +1,25 @@
+{
+  "name":"FeMoIO",
+  "pages":{
+    "index":{
+      "title":{
+        "de":"FeMo IO Startseite",
+        "en":"FeMo IO Homepage"
+      },
+      "content":{
+        "de":"data/de/index.md",
+        "en":"data/en/index.md"
+      }
+    },
+    "about":{
+      "title":{
+        "de":"FeMo IO Über",
+        "en":"FeMo IO About"
+      },
+      "content":{
+        "de":"data/de/about.md",
+        "en":"data/en/about.md"
+      }
+    }
+  }
+}

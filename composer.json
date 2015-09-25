@@ -1,0 +1,6 @@
+{
+    "require": {
+        "slim/slim": "~2.6",
+        "erusev/parsedown": "~1.5"
+    }
+}
